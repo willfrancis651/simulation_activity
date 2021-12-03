@@ -9,6 +9,19 @@ library(tidyverse)
 library(GGally)
 library(skimr)
 library(data.table)
+library(randNames)
 
-set.seed(1)
+names <- (rand_names(250, seed=22))
+
+table(names$gender)
+table(names$location.country)
+table(names$registered.age)
+
+names$name <- paste(names$name.first, names$name.last)
+
+names_trim <- names[c('name', 'gender', 'location.country')]
+
+colnames(names_trim)[colnames(names_trim) == 'location.country'] <- 'country'
+
+
 
