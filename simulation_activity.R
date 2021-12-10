@@ -64,3 +64,12 @@ for (col in SNP_cols) {
 }
 
 sim_snps$c.1.250. <- NULL
+
+# Full dataframe
+
+full_df <- names_trim
+full_df$age <- age
+full_df$education <- education
+full_df$case_control_status <- case_control_status
+full_df <- cbind(full_df, sim_genes)
+full_df <- cbind(full_df, sim_snps)
